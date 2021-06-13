@@ -6,37 +6,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
+    android:background="@drawable/earth_portrait"
     tools:ignore="MissingClass">
 
     <TextView
         android:id="@+id/resultField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/textcolor"
+        android:textSize="@dimen/Textsize"
         app:layout_constraintHorizontal_weight="1"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/operationField"/>
+        app:layout_constraintRight_toLeftOf="@+id/operationField"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/operationField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/text"
+        android:textSize="40sp"
         app:layout_constraintHorizontal_weight="1"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/resultField"
-        />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/numberField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/resultField"
+        android:textColor="@color/Text2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultField" />
 
     <LinearLayout
         android:id="@+id/firstButtonPanel"
@@ -47,27 +50,29 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onNumberClick"
             android:text="@string/_7" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onNumberClick"
             android:text="@string/_8" />
 
-        <Button
-            android:layout_weight="1"
+        <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/_9"
-            android:onClick="onNumberClick"/>
-        <Button
+            android:layout_weight="1"
+            android:onClick="onNumberClick"
+            android:text="@string/_9" />
+
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -82,30 +87,31 @@
         app:layout_constraintTop_toBottomOf="@+id/firstButtonPanel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_4"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_5"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_6"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/um"
             android:onClick="onOperationClick"/>
+
     </LinearLayout>
     <LinearLayout
         android:id="@+id/thirdButtonPanel"
@@ -115,25 +121,26 @@
         app:layout_constraintTop_toBottomOf="@+id/secondButtonPanel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-        <Button
+
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_1"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_2"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_3"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -148,25 +155,25 @@
         app:layout_constraintTop_toBottomOf="@+id/thirdButtonPanel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/_0"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/point"
             android:onClick="onNumberClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/pl"
             android:onClick="onOperationClick"/>
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
