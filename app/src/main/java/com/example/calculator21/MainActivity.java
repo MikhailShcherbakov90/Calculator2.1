@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     Double operand = null;
     String lastOperation = "=";
 
+    private static final String OPERATION = "OPERATION";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         operationField = findViewById(R.id.operationField);
     }
 
-    // сохранение состояния
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putString("OPERATION", lastOperation);
+        outState.putString(OPERATION, lastOperation);
         if (operand != null)
             outState.putDouble("OPERAND", operand);
         super.onSaveInstanceState(outState);
@@ -37,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        lastOperation = savedInstanceState.getString("OPERATION");
+        lastOperation = savedInstanceState.getString(OPERATION);
         operand = savedInstanceState.getDouble("OPERAND");
         resultField.setText(operand.toString());
         operationField.setText(lastOperation);
